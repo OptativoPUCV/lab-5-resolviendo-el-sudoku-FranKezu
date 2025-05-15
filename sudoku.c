@@ -68,22 +68,20 @@ int is_valid(Node* n){
     }
   }
 
+  //Verificar sub-matrices.
   for (int k = 0; k < 9; k++) {
-    int seen[10] = {0};
+    int repe[10] = {0};
     for (int p = 0; p < 9; p++) {
-        int i = 3 * (k / 3) + (p / 3);
-        int j = 3 * (k % 3) + (p % 3);
-        int val = n->sudo[i][j];
-        if (val != 0) {
-          if (seen[val]) return 0;
-          seen[val] = 1;
-        }
+      int i = 3 * (k / 3) + (p / 3);
+      int j = 3 * (k % 3) + (p % 3);
+      int val = n->sudo[i][j];
+      if (val != 0) {
+        if (repe[val]) return 0;
+        repe[val] = 1;
+      }
     }
-}
-
-
+  }
   return 1;
-
 }
 
 
