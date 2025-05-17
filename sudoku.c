@@ -63,7 +63,7 @@ int is_valid(Node* n){
       int val = n->sudo[j][i];
       if(val != 0){
         if(n_columnas[val]) return 0;
-        n_filas[val] = 1;
+        n_columnas[val] = 1;
       }
     }
   }
