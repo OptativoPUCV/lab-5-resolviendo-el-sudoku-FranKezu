@@ -69,11 +69,11 @@ int is_valid(Node* n){
   }
 
   //Verificar sub-matrices.
-  for (int k = 0; k < 9; k++) {
+  for (k = 0; k < 9; k++) {
     int repe[10] = {0};
     for (int p = 0; p < 9; p++) {
-      int i = 3 * (k / 3) + (p / 3);
-      int j = 3 * (k % 3) + (p % 3);
+      i = 3 * (k / 3) + (p / 3);
+      j = 3 * (k % 3) + (p % 3);
       int val = n->sudo[i][j];
       if (val != 0) {
         if (repe[val]) return 0;
@@ -108,14 +108,18 @@ int is_final(Node* n){
   return 1;
 }
 
-Node * DFS(Node * initial, int * cont) {
+Node * DFS(Node *initial, int *cont) {
   Stack *S = createStack();
   push(S, initial);
   while (size(S) != 0) {
-    Node *n = (Node *) pop(S);
+    Node *n = top(S);
+    pop(S);
+    
     if (is_final(n)) return n;
+
     List *adj = get_adj_nodes(n);
-    for (Node * cur = first(adj); cur != NULL; cur = next(adj)) {
+
+    for (Node *cur = first(adj); cur != NULL; cur = next(adj)) {
       push(S, cur);
     }
 
