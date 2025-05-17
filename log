@@ -77,3 +77,28 @@ Thu, May 15, 2025  5:55:55 PM:
  tests:  7|1
 total_score: 55/70
 2616fb8
+Sat, May 17, 2025  1:06:30 PM: 
+ sudoku.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:47:13: warning: unused variable 'k' [-Wunused-variable]
+   47 |   int i, j, k;
+      |             ^
+sudoku.c: In function 'DFS':
+sudoku.c:114:10: error: implicit declaration of function 'size'; did you mean '_msize'? [-Wimplicit-function-declaration]
+  114 |   while (size(S) != 0) {
+      |          ^~~~
+      |          _msize
+sudoku.c:115:15: error: invalid use of void expression
+  115 |     Node *n = (Node *) pop(S);
+      |               ^
+sudoku.c:122:5: error: implicit declaration of function 'free_node' [-Wimplicit-function-declaration]
+  122 |     free_node(n);
+      |     ^~~~~~~~~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+40bac6e
