@@ -123,7 +123,7 @@ Node * DFS(Node *initial, int *cont) {
 
     while(current != NULL){
       push(S, current);
-      current = next(current);
+      current = next(adj);
     }
 
     free(current);
