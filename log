@@ -140,3 +140,17 @@ Sat, May 17, 2025  1:14:56 PM:
  tests:  8|1
 total_score: 60/70
 c416604
+Sat, May 17, 2025  1:25:15 PM: 
+ sudoku.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:126:7: error: implicit declaration of function 'ptr' [-Wimplicit-function-declaration]
+  126 |       ptr(next(current));
+      |       ^~~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+6f34b5f
