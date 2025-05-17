@@ -126,7 +126,7 @@ Node * DFS(Node *initial, int *cont) {
       current = next(current);
     }
 
-    free(n);
+    free(current);
     (*cont) ++;
   }
   return NULL;
