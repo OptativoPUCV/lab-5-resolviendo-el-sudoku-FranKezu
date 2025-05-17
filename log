@@ -154,3 +154,15 @@ test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous 
     7 | char * _strdup(const char * str) {
       |        ^~~~~~~
 6f34b5f
+Sat, May 17, 2025  1:25:19 PM: 
+Compilation failed
+In file included from test.c:5:
+sudoku.c: In function 'DFS':
+sudoku.c:126:7: error: implicit declaration of function 'ptr' [-Wimplicit-function-declaration]
+  126 |       ptr(next(current));
+      |       ^~~
+test.c: At top level:
+test.c:7:8: warning: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Wattributes]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+ee293e9
