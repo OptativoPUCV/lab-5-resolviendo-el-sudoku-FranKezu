@@ -123,7 +123,7 @@ Node * DFS(Node *initial, int *cont) {
       push(S, cur);
     }
 
-    free_node(n);
+    free(n);
     (*cont) ++;
   }
   return NULL;
